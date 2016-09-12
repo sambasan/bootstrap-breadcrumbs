@@ -148,7 +148,7 @@ def render_breadcrumbs(context, *args):
     context['breadcrumbs'] = links
     context['breadcrumbs_total'] = len(links)
     return mark_safe(template.loader.render_to_string(
-        template_path, context))
+        template_path, context.flatten()))
 
 
 class BreadcrumbNode(template.Node):
